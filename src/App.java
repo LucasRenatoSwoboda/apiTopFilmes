@@ -11,7 +11,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         // Fazer comunicação HTTP
-        String urlApi = "https://imdb-api.com/en/API/Top250Movies/k_ykhu4ypa";
+        String urlApi = UrlApi.retornaURL(2);
         // https://imdb-api.com/en/API/MostPopularMovies/k_ykhu4ypa (Filmes mais
         // populares, criar classe para gerir as escolhas da API a buscar)
         URI encereco = URI.create(urlApi);
@@ -48,6 +48,10 @@ public class App {
 
         // 2 - Esconder a chave da URL pois é uma chave particular (buscar de um arquivo
         // de configuração)
+        // Tentei criar um arquivo de configuração ini, mas não consegui fazer a leitura
+        // do arquivo para escolher a chave
+        // Criei nova classe UrlApi que vai retornar a chave 1 ou 2 para leitura
+        // (ajudará no limite de teste diário)
 
         // 3 - Usar uma outra biblioteca como Jackson ou outra para fazer o parseamento
 
