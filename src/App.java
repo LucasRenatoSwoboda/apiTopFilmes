@@ -11,6 +11,8 @@ public class App {
 
         // Fazer comunicação HTTP
         String urlApi = "https://imdb-api.com/en/API/Top250Movies/k_ykhu4ypa";
+        // https://imdb-api.com/en/API/MostPopularMovies/k_ykhu4ypa (Filmes mais
+        // populares, criar classe para gerir as escolhas da API a buscar)
         URI encereco = URI.create(urlApi);
         var client = HttpClient.newHttpClient();
         var request = HttpRequest.newBuilder(encereco).GET().build();
@@ -28,6 +30,17 @@ public class App {
             System.out.println(filme.get("imDbRating"));
             System.out.println();
         }
+
+        // Desafios propostos na aula
+
+        // 1 - Mudar a visualização do terminal com o resultado (Exibir cores e estrela)
+
+        // 2 - Esconder a chave da URL pois é uma chave particular (buscar de um arquivo
+        // de configuração)
+
+        // 3 - Usar uma outra biblioteca como Jackson ou outra para fazer o parseamento
+
+        // 4 - Criar método para o usuário avaliar o filme
 
     }
 }
