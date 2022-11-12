@@ -3,6 +3,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
+import java.text.Format;
 import java.util.List;
 import java.util.Map;
 
@@ -25,10 +26,17 @@ public class App {
 
         // Exibir e manipular os dados
         for (Map<String, String> filme : listaDeFilmes) {
-            System.out.println(filme.get("title"));
-            System.out.println(filme.get("image"));
-            System.out.println(filme.get("imDbRating"));
-            System.out.println();
+
+            System.out.println(FormatarFonte.mudaCorFonte(filme.get("title"), 2));
+            System.out.println(FormatarFonte.mudaCorDestaqueFonte(filme.get("image"), 5, 3));
+            // System.out.print("\u001b[1mFILME \u001b[\n\u001b[38;2;250;50;50mTítulo:
+            // \u001b[0m");
+            // System.out.println("\u001b[38;2;255;50;50m" + filme.get("title") +
+            // "\u001b[0m");
+            // System.out.print("Imagem: ");
+            // System.out.println(filme.get("image"));
+            // System.out.println(filme.get("imDbRating"));
+            // System.out.println();
         }
 
         // Desafios propostos na aula
