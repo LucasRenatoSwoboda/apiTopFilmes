@@ -18,10 +18,16 @@ public class App {
         String body = response.body();
 
         // Extrair os dados que interessam
-        JsonParser parser = new JsonParser();
-        List<Map<String, String>> listaDeFilmes = body;
+        var parser = new JsonParser();
+        List<Map<String, String>> listaDeFilmes = parser.parse(body);
 
         // Exibir e manipular os dados
+        for (Map<String, String> filme : listaDeFilmes) {
+            System.out.println(filme.get("title"));
+            System.out.println(filme.get("image"));
+            System.out.println(filme.get("imDbRating"));
+            System.out.println();
+        }
 
     }
 }
