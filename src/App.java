@@ -3,7 +3,6 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
-import java.text.Format;
 import java.util.List;
 import java.util.Map;
 
@@ -33,7 +32,7 @@ public class App {
             System.out.println(FormatarFonte.mudaDestaqueFonte(filme.get("title"), 1) + FormatarFonte.getREDEFINIR());
             System.out.print("Poster: ");
             System.out.println(FormatarFonte.mudaDestaqueFonte(filme.get("image"), 1) + FormatarFonte.getREDEFINIR());
-            System.out.print(FormatarFonte.mudaCorDestaqueFonteCorFundo("Classificação: ", 7, 1, 5));
+            System.out.print(FormatarFonte.mudaCorDestaqueFonteCorFundo("Classificação: ", 7, 1, 6));
             System.out.println(filme.get("imDbRating") + FormatarFonte.getREDEFINIR() + "\n");
         }
 
